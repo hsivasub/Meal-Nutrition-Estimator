@@ -36,5 +36,4 @@ Tracking daily food intake is crucial for maintaining a healthy diet. However, m
    pip install -r requirements.txt
    ```
 
-## Roadmap (14-Day Push Plan)
-This project is structured iteratively over a 14-day timeline. Track our progress checking the `task.md` or following the Git commits step-by-step. Let's build!
+
