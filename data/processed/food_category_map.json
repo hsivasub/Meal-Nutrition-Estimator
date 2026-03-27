@@ -1,0 +1,22 @@
+{
+  "pizza": {"fdc_id": 1104332, "description": "Cheese pizza, regular crust"},
+  "hamburger": {"fdc_id": 1104803, "description": "Hamburger, regular, single patty, plain"},
+  "sushi": {"fdc_id": 1102871, "description": "Sushi, with vegetables and fish"},
+  "french_fries": {"fdc_id": 1104523, "description": "French fries, restaurant"},
+  "hot_dog": {"fdc_id": 1098656, "description": "Hot dog, plain, on bun"},
+  "fried_rice": {"fdc_id": 1105151, "description": "Fried rice, restaurant"},
+  "ramen": {"fdc_id": 1100345, "description": "Noodle soup, ramen style"},
+  "ice_cream": {"fdc_id": 1097615, "description": "Ice cream, vanilla"},
+  "donuts": {"fdc_id": 1104279, "description": "Doughnut, cake, plain"},
+  "macarons": {"fdc_id": 1104313, "description": "Macaron, cookie"},
+  "tacos": {"fdc_id": 1102021, "description": "Taco, with beef, cheese, and lettuce"},
+  "steak": {"fdc_id": 1098555, "description": "Beef, steak, cooked"},
+  "spaghetti_bolognese": {"fdc_id": 1102553, "description": "Spaghetti with meat sauce"},
+  "chicken_wings": {"fdc_id": 1098492, "description": "Chicken wings, deep fried"},
+  "omelette": {"fdc_id": 1100067, "description": "Omelet, plain"},
+  "caesar_salad": {"fdc_id": 1103328, "description": "Caesar salad with romaine"},
+  "dumplings": {"fdc_id": 1102711, "description": "Dumplings, meat or poultry"},
+  "grilled_cheese_sandwich": {"fdc_id": 1100332, "description": "Grilled cheese sandwich"},
+  "pancakes": {"fdc_id": 1100234, "description": "Pancake, plain"},
+  "waffles": {"fdc_id": 1100256, "description": "Waffle, plain"}
+}
