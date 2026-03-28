@@ -39,6 +39,41 @@ class BaselineCNN(nn.Module):
         # Apply FC -> relu -> dropout -> FC
         x = F.relu(self.fc1(x))
         x = self.dropout(x)
-        x = self.fc2(x)
-        
         return x
+
+from torchvision.models import efficientnet_b0, EfficientNet_B0_Weights
+
+class FoodEfficientNet(nn.Module):
+    """
+    Transfer Learning Model utilizing EfficientNet-B0 backbone.
+    Allows dynamic freezing/unfreezing of the network for fine-tuning.
+    """
+    def __init__(self, num_classes=20, freeze_backbone=True):
+        super(FoodEfficientNet, self).__init__()
+        
+        # Load pretrained model
+        weights = EfficientNet_B0_Weights.DEFAULT
+        self.model = efficientnet_b0(weights=weights)
+        
+        # Freeze the backbone weights if required
+        if freeze_backbone:
+            for param in self.model.parameters():
+                param.requires_grad = False
+                
+        # Replace the final classification head
+        in_features = self.model.classifier[1].in_features
+        self.model.classifier = nn.Sequential(
+            nn.Dropout(p=0.4, inplace=True),
+            nn.Linear(in_features, num_classes)
+        )
+
+    def forward(self, x):
+        return self.model(x)
+
+    def unfreeze_top_layers(self, blocks_to_unfreeze=3):
+        """
+        Unfreezes the top `blocks_to_unfreeze` layers in the features backbone
+        for fine-tuning the pretrained model closer to the top layers.
+        """
+        for param in self.model.features[-blocks_to_unfreeze:].parameters():
+            param.requires_grad = True
