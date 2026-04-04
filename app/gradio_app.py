@@ -78,7 +78,7 @@ def analyze_meal(image_filepath):
     return html_output, raw_json
 
 # Constructing the Gradio Blocks Interface
-with gr.Blocks(title="Meal Nutrition Estimator Web UI", theme=gr.themes.Base()) as demo:
+with gr.Blocks(title="Meal Nutrition Estimator Web UI") as demo:
     gr.Markdown(
         """
         # 🥗 AI Meal Nutrition Estimator
@@ -102,4 +102,4 @@ with gr.Blocks(title="Meal Nutrition Estimator Web UI", theme=gr.themes.Base()) 
 
 if __name__ == "__main__":
     # Launch locally for dev
-    demo.launch(server_name="0.0.0.0", server_port=7860, debug=True)
+    demo.launch(server_name="0.0.0.0", server_port=7860, debug=True, theme=gr.themes.Base())
