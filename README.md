@@ -36,4 +36,26 @@ Tracking daily food intake is crucial for maintaining a healthy diet. However, m
    pip install -r requirements.txt
    ```
 
+## System Architecture
+
+```mermaid
+graph TD
+    A[Image Upload] --> B[EfficientNet-B0 Classifier]
+    A --> C[Reference Object Portion Estimator]
+    B -->|Food Label| D[USDA Nutrition Retriever]
+    D -->|100g Baseline Facts| E[Nutrition Scaler]
+    C -->|Estimated Grams| E
+    E -->|Scaled Macros| F[Health Score Engine]
+    F -->|Traffic Light Rating| G[Gradio Web UI]
+    E --> G
+    B --> H[Grad-CAM / SHAP Explainability]
+    H --> G
+```
+
+## Explainability
+The platform uses techniques like Grad-CAM to ensure the model focuses on the right features.
+
+![Sample Grad-CAM Visualization](reports/figures/grad_cam_sample.png)
+
+
 
