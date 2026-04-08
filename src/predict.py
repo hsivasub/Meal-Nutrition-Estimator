@@ -3,6 +3,8 @@ import torch
 from torchvision import transforms
 from PIL import Image
 
+from typing import Optional, Dict, Any
+
 from src.food_classifier import FoodEfficientNet
 from src.nutrition_retriever import NutritionRetriever
 from src.portion_estimator import ReferenceObjectPortionEstimator, scale_nutrition
@@ -14,7 +16,7 @@ class FullInferencePipeline:
     Image -> Food Label -> Baseline Nutrition -> Portion Scaling -> Health Score.
     Includes input validation and isolated error handling.
     """
-    def __init__(self, model_path=None, device=None):
+    def __init__(self, model_path: Optional[str] = None, device: Optional[torch.device] = None) -> None:
         self.device = device if device else torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         
         # 1. Initialize PyTorch Food Classifier
@@ -49,7 +51,7 @@ class FullInferencePipeline:
             18: "pancakes", 19: "waffles"
         }
 
-    def predict(self, image_path):
+    def predict(self, image_path: str) -> Dict[str, Any]:
         """
         Executes the full chain on a target image input payload.
         
