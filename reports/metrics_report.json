@@ -1,0 +1,45 @@
+{
+  "live_pipeline": {
+    "total_images": 100,
+    "success_count": 100,
+    "pipeline_success_pct": 100.0,
+    "mean_latency_ms": 21.16,
+    "p95_latency_ms": 22.61,
+    "traffic_light_accuracy_pct": 20.0,
+    "health_score_mae": 26.03
+  },
+  "finetuned_model": {
+    "top1_accuracy_pct": 83.0,
+    "top3_accuracy_pct": 94.0,
+    "macro_precision_pct": 85.82,
+    "macro_recall_pct": 83.0,
+    "macro_f1_pct": 82.85,
+    "mean_confidence_pct": 71.77,
+    "per_class_f1": {
+      "pizza": 83.33,
+      "hamburger": 100.0,
+      "sushi": 80.0,
+      "french_fries": 75.0,
+      "hot_dog": 88.89,
+      "fried_rice": 76.92,
+      "ramen": 75.0,
+      "ice_cream": 100.0,
+      "donuts": 66.67,
+      "macarons": 66.67,
+      "tacos": 72.73,
+      "steak": 75.0,
+      "spaghetti_bolognese": 88.89,
+      "chicken_wings": 90.91,
+      "omelette": 100.0,
+      "caesar_salad": 80.0,
+      "dumplings": 76.92,
+      "grilled_cheese_sandwich": 100.0,
+      "pancakes": 60.0,
+      "waffles": 100.0
+    },
+    "calorie_mae_kcal": 24.62,
+    "calorie_rmse_kcal": 31.34,
+    "calorie_r2": 0.9913,
+    "calorie_mape_pct": 3.41
+  }
+}
