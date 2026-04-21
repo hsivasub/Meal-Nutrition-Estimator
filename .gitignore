@@ -166,3 +166,4 @@ data/
 models/
 mlflow/
 .DS_Store
+project_explanation_technical.txt
