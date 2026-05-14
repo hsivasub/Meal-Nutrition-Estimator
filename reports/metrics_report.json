@@ -3,8 +3,8 @@
     "total_images": 100,
     "success_count": 100,
     "pipeline_success_pct": 100.0,
-    "mean_latency_ms": 21.16,
-    "p95_latency_ms": 22.61,
+    "mean_latency_ms": 21.05,
+    "p95_latency_ms": 23.52,
     "traffic_light_accuracy_pct": 20.0,
     "health_score_mae": 26.03
   },
